@@ -71,8 +71,7 @@ export default function MessageView({
           }}
           className={`flex items-center px-4 cursor-pointer border-b transition-colors duration-200
             ${isActive ? 'bg-gray-800 text-white' : 'hover:bg-gray-100'}`}
-        >
-          {chat.id}
+        > 
           <div className="flex-1 font-medium ">{chat.title}</div>
           {chat.unreadCount > 0 && (
             <div className="ml-2 text-xs font-semibold text-white bg-red-500 rounded-full px-2 py-0.5">

@@ -52,13 +52,14 @@ export async function sendMesasge(db: any, message: string, chatid: string) {
      let stmt= db.prepare(`
         SELECT *
         FROM messages
-        WHERE chatId = ?
+        WHERE id = ?
         ORDER BY ts DESC
-        LIMIT 50
+        LIMIT 1
       `);
-      stmt = stmt.all(chatid);
+      stmt = stmt.all(id);
+      
       db.prepare('UPDATE chats SET lastMessageAt = ? WHERE id = ?').run(lastTimestamp, chatid);
-        return {dfd,id}; // returns an array of all messages (possibly filtered)
+        return stmt; // returns an array of all messages (possibly filtered)
     } catch (err) {
         console.error("Error searching messages:", err);
         return [];
