@@ -108,3 +108,104 @@ Implement on (listen) and emit (send) methods.
 Add simulateServerMessage for testing.
 
 Later, swap with real WebSocket client.
+
+
+Project Info
+
+Name: my-electron-app
+
+Version: 0.0.1
+
+Private: true (cannot be published to npm)
+
+Main Entry: Electron/main.js
+
+Module Type: ES Module
+
+Scripts
+Script	Description
+dev	Runs Vite in development mode for the frontend.
+electron:dev	Runs both Vite and Electron concurrently. Waits for the frontend to be ready (http://localhost:5173) before launching Electron.
+build	Builds the frontend using Vite and packages the Electron app using electron-builder.
+preview	Previews the production build of the frontend.
+Dependencies
+
+These packages are required for the app to run:
+
+@tailwindcss/vite – TailwindCSS integration with Vite
+
+better-sqlite3 – Fast SQLite3 database for local storage
+
+core-js – Polyfills for modern JavaScript features
+
+react – Frontend library
+
+react-dom – React DOM renderer
+
+react-virtualized – Virtualized list rendering for performance
+
+react-window – Lightweight virtualized lists
+
+zustand – State management library
+
+Dev Dependencies
+
+Packages required for development:
+
+@electron/rebuild / electron-rebuild – Rebuild native modules for Electron
+
+@types/node, @types/react, @types/react-dom – TypeScript type definitions
+
+@vitejs/plugin-react – React plugin for Vite
+
+autoprefixer / postcss / tailwindcss / @tailwindcss/postcss – TailwindCSS and PostCSS build tooling
+
+concurrently – Run multiple commands concurrently
+
+electron – Electron runtime
+
+electron-builder – Build and package Electron apps
+
+typescript – TypeScript compiler
+
+vite – Frontend build tool (with a custom rolldown-vite alias)
+
+wait-on – Wait for URLs, files, sockets before executing commands
+
+Build Configuration (electron-builder)
+
+Settings for building and packaging the Electron app:
+
+App ID: com.yourname.myapp
+
+Included Files:
+
+Frontend production files: dist/**/*
+
+Main Electron script: Electron/main.js
+
+Preload script: Electron/preload.js
+
+package.json
+
+Build Resources Directory: assets
+
+Targets:
+
+Mac: dmg (disk image installer)
+
+Windows: nsis (installer executable)
+
+Notes
+
+The project is structured for modern ES modules.
+
+TailwindCSS is configured via Vite.
+
+SQLite database access is handled using Better SQLite3 for synchronous operations.
+
+Real-time UI performance is optimized with react-virtualized and react-window.
+
+If you want, I can also write a shorter “for developers” version of this README that focuses on setup and running the app—it will be copy-paste ready.
+
+Do you want me to do that?
