@@ -36,7 +36,7 @@ export function seed() {
 
   ;
 
-  const totalMessages = 100;
+  const totalMessages = 5000;
   const insertMsg = db.prepare(
     'INSERT INTO messages (id, chatId, sender, body, ts) VALUES (?, ?, ?, ?, ?)'
   );

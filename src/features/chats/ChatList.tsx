@@ -10,36 +10,36 @@ interface ChatListProps {
     loadingMessages: boolean;
     active: string | null;
     messages: Message[];
-    messagesEndRef: React.RefObject<HTMLDivElement>; 
+    messagesEndRef: React.RefObject<HTMLDivElement>;
 }
 
 export default function ChatList({
     loadingMessages,
     active,
     messages,
-    messagesEndRef, 
+    messagesEndRef,
 }: ChatListProps) {
     const [message, setMessage] = useState('');
     const [collectMessages, setCollectMessages] = useState<Message[]>([]);
 
     useEffect(() => {
         setCollectMessages(messages);
-        
+
     }, [messages]);
 
     async function storeNewMessage(activeChat: string) {
         if (!message.trim()) return;
         try {
-        const theSavedMessage=    await window.api.sendMessage(message, activeChat);
-           setCollectMessages((pre)=>([...pre, ...theSavedMessage]));
-           setMessage("")
+            const theSavedMessage = await window.api.sendMessage(message, activeChat);
+            setCollectMessages((pre) => ([...pre, ...theSavedMessage]));
+            setMessage("")
         } catch (err) {
             console.error("Failed to send message:", err);
         }
     }
 
     return (
-        <div className="flex-1 flex flex-col p-6 bg-gray-50">
+        <div className="flex-1 flex flex-col py-6 px-3 bg-gray-50">
             {active ? (
                 loadingMessages ? (
                     <div className="text-gray-500 italic">Loading messages...</div>
@@ -61,9 +61,8 @@ export default function ChatList({
                                                 className={`flex ${isYou ? 'justify-end' : 'justify-start'}`}
                                             >
                                                 <div
-                                                    className={`p-2 rounded-xl max-w-md break-words shadow-sm ${
-                                                        isYou ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'
-                                                    }`}
+                                                    className={`p-2 rounded-xl max-w-md break-words shadow-sm ${isYou ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'
+                                                        }`}
                                                 >
                                                     {!isYou && (
                                                         <div className="text-xs font-semibold text-gray-700 mb-1">
