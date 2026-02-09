@@ -1,7 +1,7 @@
 import { ipcMain } from 'electron';
 // import Database from 'sqlite3';
-import initDB from '../db/index.ts';
-import { MakeUnRedMessageToSeen, sendMesasge } from './helpers.ts';
+import initDB from '../db/index.js';
+import { MakeUnRedMessageToSeen, sendMesasge } from './helpers.js';
 const db = initDB()
 
 

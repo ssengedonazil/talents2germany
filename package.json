@@ -8,11 +8,13 @@
     "dev": "vite",
     "electron:dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
     "build": "vite build && electron-builder",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fix-native": "rm -rf node_modules && yarn install && yarn add better-sqlite3 --build-from-source --runtime=electron --target=40.2.1 --dist-url=https://electronjs.org/headers"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
-    "better-sqlite3": "^12.6.2",
+ 
+"better-sqlite3": "^9.4.0",
     "core-js": "^3.48.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -29,9 +31,9 @@
     "@vitejs/plugin-react": "^5.1.1",
     "autoprefixer": "^10.4.24",
     "concurrently": "^9.2.1",
-    "electron": "^40.2.1",
+       "electron": "^30.0.9",
     "electron-builder": "^26.7.0",
-    "electron-rebuild": "^2.0.3",
+    "electron-rebuild": "^1.4.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "typescript": "~5.9.3",

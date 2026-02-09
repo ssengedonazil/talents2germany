@@ -4,7 +4,7 @@
  * **/
 import { randomUUID } from 'crypto';
 
-export async function MakeUnRedMessageToSeen(db: any, chatId: string) {
+export async function MakeUnRedMessageToSeen(db, chatId) {
     const updateUnread = db.prepare(`
         UPDATE chats
         SET unreadCount = 0
@@ -19,7 +19,7 @@ export async function MakeUnRedMessageToSeen(db: any, chatId: string) {
     }
 }
 
-export async function searchAllMessages(db: any, query?: string) {
+export async function searchAllMessages(db, query) {
     try {
         let messages;
 
@@ -40,7 +40,7 @@ export async function searchAllMessages(db: any, query?: string) {
         return [];
     }
 }
-export async function sendMesasge(db: any, message: string, chatid: string) {
+export async function sendMesasge(db, message, chatid) {
     try {
         const id = randomUUID();
          let lastTimestamp = Date.now() ;

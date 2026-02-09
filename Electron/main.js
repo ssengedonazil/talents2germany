@@ -2,7 +2,7 @@ import { app, BrowserWindow } from 'electron';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { registerChatHandlers } from './ipc/initialize.js'; // ESM import
-import { seed } from './db/seed.ts';
+import { seed } from './db/seed.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

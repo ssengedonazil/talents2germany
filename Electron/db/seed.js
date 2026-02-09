@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import initDB from './index.ts';
+import initDB from './index.js';
 
 export function seed() {
   const db = initDB();

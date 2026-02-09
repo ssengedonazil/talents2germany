@@ -11,5 +11,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src","Electron/**/*.ts"]
+  "include": ["src","Electron/**/*.ts", "Electron/db/seed.js", "Electron/db/index.js", "Electron/ipc/helpers.js"]
 }
